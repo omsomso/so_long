@@ -13,13 +13,12 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <math.h>
-#include "src/mlx/mlx.h"
-#include "src/libft/libft.h"
-#include "src/gnl/get_next_line.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include "src/mlx/mlx.h"
+# include "src/libft/libft.h"
+# include "src/gnl/get_next_line.h"
 
 typedef struct s_data
 {
