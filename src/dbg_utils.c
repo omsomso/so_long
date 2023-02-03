@@ -19,16 +19,15 @@ void	print_matrix(char **m, int x, int y)
 
 	i = 0;
 	j = 0;
-	printf("===x = %d, y = %d===\n", x, y);
-	while (i < y)
+	while (i <= y)
 	{
-		while (j < x)
+		while (j <= x)
 		{
-			printf("%c ", m[i][j]);
+			ft_putchar_fd(m[i][j], 1);
 			j++;
 		}
 		j = 0;
 		i++;
-		printf("\n");
+		ft_putchar_fd('\n', 1);
 	}
 }

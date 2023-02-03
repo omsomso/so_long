@@ -84,8 +84,8 @@ void	handle_end(t_data *data, int w, int h, int midx)
 			e = mlx_xpm_file_to_image(data->mlx, "sprites/win_l.xpm", &w, &h);
 		midx = (data->x * 32) / 2 - (w / 2);
 		mlx_put_image_to_window(data->mlx, data->win, e, midx, 0);
-		ft_putendl_fd("art by shubibubi on itch.io", 0);
-		ft_putendl_fd("////press exit to quit////", 0);
+		ft_putendl_fd("art by shubibubi on itch.io", 1);
+		ft_putendl_fd("////press exit to quit////", 1);
 		mlx_destroy_image(data->mlx, e);
 	}
 	if (data->end != 0)
