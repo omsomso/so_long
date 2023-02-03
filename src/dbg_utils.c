@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 23:31:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 01:32:58 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:59:33 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,15 @@ void	print_matrix(char **m, int x, int y)
 
 	i = 0;
 	j = 0;
-	printf("===x = %d, y = %d===\n", x, y);
-	while (i < y)
+	while (i <= y)
 	{
-		while (j < x)
+		while (j <= x)
 		{
-			printf("%c ", m[i][j]);
+			ft_putchar_fd(m[i][j], 1);
 			j++;
 		}
 		j = 0;
 		i++;
-		printf("\n");
+		ft_putchar_fd('\n', 1);
 	}
 }
