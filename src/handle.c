@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:48:48 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 10:54:18 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:35:57 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ int	handle_keypress(int key, t_data *data)
 	return (0);
 }
 
+void	draw_sprites(t_data *data)
+{
+	data->anim_frame++;
+	mlx_clear_window(data->mlx, data->win);
+	draw_background(data);
+	add_counter(data);
+	if (data->foe == 1)
+		position_foe(data);
+	animate_players(data);
+	draw_players(data);
+	draw_exit(data, "sprites/exit.xpm");
+	draw_counter(data);
+}
+
 int	handle_keyrelease(int key, t_data *data)
 {
 	(void) key;
@@ -84,8 +98,10 @@ void	handle_end(t_data *data, int w, int h, int midx)
 			e = mlx_xpm_file_to_image(data->mlx, "sprites/win_l.xpm", &w, &h);
 		midx = (data->x * 32) / 2 - (w / 2);
 		mlx_put_image_to_window(data->mlx, data->win, e, midx, 0);
-		ft_putendl_fd("art by shubibubi on itch.io", 1);
-		ft_putendl_fd("////press exit to quit////", 1);
+		add_counter(data);
+		draw_counter(data);
+		ft_putendl_fd("//art by shubibubi and Elthen on itch.io//", 1);
+		ft_putendl_fd("\t////press exit to quit////", 1);
 		mlx_destroy_image(data->mlx, e);
 	}
 	if (data->end != 0)

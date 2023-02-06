@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:53:07 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 11:01:27 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:32:40 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void	set_player_direction(int key, t_data *data);
 void	copy_map(t_data *data);
 int	check_path(t_data *data, int i, int j);
 int	find_map_height(char *s);
+void	start_window_n_hooks(t_data *data);
+void	free_map(t_data *data, int st);
 
 #endif

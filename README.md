@@ -14,4 +14,4 @@ PS : 42 school's MiniLibX has different versions depending on the system, I used
 
 Here's a vid of the "gameplay"
 
-[![so_long](http://i3.ytimg.com/vi/hGpOaKObZ8I/hqdefault.jpg)](https://www.youtube.com/watch?v=hGpOaKObZ8I)
+[![so_long](http://i3.ytimg.com/vi/8jCU5gmKVdw/hqdefault.jpg)](https://youtu.be/8jCU5gmKVdw)

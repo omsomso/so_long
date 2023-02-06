@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:46:20 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/02 22:56:30 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/03 21:04:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putendl_fd("Error : can't open file", 2);
+		ft_putendl_fd("Error\nSpecify one map file :>", 2);
 		return (1);
 	}
 	tmp = ft_strdup(argv[1]);

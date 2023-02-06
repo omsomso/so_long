@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:44:50 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 01:32:03 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:24:02 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	check_map_filename(char *s)
 		}
 		i++;
 	}
+	free(test);
 	return (0);
 }
 
@@ -88,20 +89,20 @@ int	check_map_error(t_data *data)
 		return (1);
 	ft_putendl_fd("Error", 2);
 	if (c == 'X')
-		ft_putendl_fd("there's one or more forbidden characters in the map", 2);
+		ft_putendl_fd("There's 1 or + forbidden characters in the map.", 2);
 	if (c == 'L')
-		ft_putendl_fd("the map isn't a rectangle", 2);
+		ft_putendl_fd("The map isn't a rectangle.", 2);
 	if (c == 'E')
-		ft_putendl_fd("the map has more than one exit (E)", 2);
+		ft_putendl_fd("The map has more than one exit (E).", 2);
 	if (c == 'P')
-		ft_putendl_fd("the map has more than one player (P) character", 2);
+		ft_putendl_fd("The map has more than one player (P) character.", 2);
 	if (c == 'F')
-		ft_putendl_fd("the map has more than one foe (F) character", 2);
+		ft_putendl_fd("The map has more than one foe (F) character.", 2);
 	if (c == 'N')
-		ft_putendl_fd("the map lacks a necessary element", 2);
+		ft_putendl_fd("The map lacks a necessary element.", 2);
 	if (c == 'B')
-		ft_putendl_fd("the map's borders aren't closed with walls or smth", 2);
+		ft_putendl_fd("The map's borders aren't closed with walls or smth.", 2);
 	if (c == 'V')
-		ft_putendl_fd("there's no valid path in the map", 2);
+		ft_putendl_fd("There's no valid path in the map.", 2);
 	return (0);
 }
