@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/03                              ###   ########.fr       */
+/*   Updated: 2023/02/06                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void	set_player_direction(int key, t_data *data);
 void	copy_map(t_data *data);
 int	check_path(t_data *data, int i, int j);
 int	find_map_height(char *s);
+void	start_window_n_hooks(t_data *data);
+void	free_map(t_data *data, int st);
 
 #endif

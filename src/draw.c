@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/02                              ###   ########.fr       */
+/*   Updated: 2023/02/06                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,18 +97,4 @@ void	draw_exit(t_data *data, char *filename)
 	mlx_put_image_to_window(data->mlx, data->win, exit_img, data->ex * 32 - 20, \
 	data->ey * 32 - 45);
 	mlx_destroy_image(data->mlx, exit_img);
-}
-
-void	draw_sprites(t_data *data)
-{
-	data->anim_frame++;
-	mlx_clear_window(data->mlx, data->win);
-	draw_background(data);
-	add_counter(data);
-	if (data->foe == 1)
-		position_foe(data);
-	animate_players(data);
-	draw_players(data);
-	draw_exit(data, "sprites/exit.xpm");
-	draw_counter(data);
 }

@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/02                              ###   ########.fr       */
+/*   Updated: 2023/02/03                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putendl_fd("Error : can't open file", 2);
+		ft_putendl_fd("Error\nSpecify one map file :>", 2);
 		return (1);
 	}
 	tmp = ft_strdup(argv[1]);
