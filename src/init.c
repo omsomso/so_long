@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/03                              ###   ########.fr       */
+/*   Updated: 2023/02/20                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 		return (0);
 	fd = open(s, O_RDONLY);
 	data->map = malloc(sizeof(char *) * height + 1);
+	if (data->map == NULL)
+		return (0);
 	while (1)
 	{
 		data->map[y] = get_next_line(fd);

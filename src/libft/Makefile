@@ -6,7 +6,7 @@
 #                                                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12                               #+#    #+#              #
-#    Updated: 2023/01/25                              ###   ########.fr        #
+#    Updated: 2023/02/20                              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC 	= 	$(SRC_DIR)ft_atoi.c \
 			$(SRC_DIR)ft_strdup.c \
 			$(SRC_DIR)ft_striteri.c \
 			$(SRC_DIR)ft_strjoin.c \
+			$(SRC_DIR)ft_strjoin_free.c \
 			$(SRC_DIR)ft_strlcat.c \
 			$(SRC_DIR)ft_strlcpy.c \
 			$(SRC_DIR)ft_strlen.c \
