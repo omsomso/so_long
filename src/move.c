@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:40:25 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 07:53:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:53:42 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,33 +59,29 @@ void	position_foe(t_data *data)
 
 void	draw_counter(t_data *data)
 {
-	char	*display[3];
-	char	*items[3];
+	char	*display;
+	char	*items;
 	void	*counter_bckg;
 	int		wi;
 	int		hi;
 
-	display[0] = ft_strjoin("Moves : ", ft_itoa(data->counter));
-	display[1] = ft_strjoin(display[0], " ");
-	items[0] = ft_strjoin("Items : ", ft_itoa(data->items_collected));
-	items[1] = ft_strjoin(items[0], "/");
-	items[2] = ft_strjoin(items[1], ft_itoa(data->items));
-	display[2] = ft_strjoin(display[1], items[2]);
+	display = ft_strjoin("Moves : ", ft_itoa(data->counter));
+	display = ft_strjoin_free(display, " ");
+	items = ft_strjoin("Items : ", ft_itoa(data->items_collected));
+	items = ft_strjoin_free(items, "/");
+	items = ft_strjoin_free(items, ft_itoa(data->items));
+	display = ft_strjoin_free(display, items);
 	counter_bckg = mlx_xpm_file_to_image(data->mlx, \
 	"sprites/counter_bckg.xpm", &wi, &hi);
 	mlx_put_image_to_window(data->mlx, data->win, counter_bckg, 0, 0);
-	mlx_string_put(data->mlx, data->win, 2, 13, 0x000000, display[2]);
+	mlx_string_put(data->mlx, data->win, 2, 13, 0x000000, display);
 	mlx_destroy_image(data->mlx, counter_bckg);
-	free(display[0]);
-	free(display[1]);
-	free(display[2]);
-	free(items[0]);
-	free(items[1]);
-	free(items[2]);
+	free(display);
+	free(items);
 }
 
 void	add_counter(t_data *data)
 {
-	if (data->move == 1)
+	if (data->move == 1 && data->end == 0)
 		data->counter++;
 }

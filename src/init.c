@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 04:18:42 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 05:47:00 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:57:16 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 		return (0);
 	fd = open(s, O_RDONLY);
 	data->map = malloc(sizeof(char *) * height + 1);
+	if (data->map == NULL)
+		return (0);
 	while (1)
 	{
 		data->map[y] = get_next_line(fd);
