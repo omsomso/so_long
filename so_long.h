@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:53:07 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/06 12:32:40 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:30:44 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_data
 	void	*bckg;
 	void	*wall;
 	void	*item;
+	void	*counter_bckg;
 	int		px;
 	int		py;
 	int		ex;
@@ -64,7 +65,7 @@ typedef struct s_data
 
 void	print_matrix(char **m, int x, int y);
 void	free_everything(t_data *data);
-int	draw_players(t_data *data);
+int		draw_players(t_data *data);
 void	animate_players(t_data *data);
 void	init_img(t_data *data);
 void	position_foe(t_data *data);
@@ -73,27 +74,27 @@ void	add_counter(t_data *data);
 void	draw_background(t_data *data);
 void	draw_exit(t_data *data, char *filename);
 void	draw_sprites(t_data *data);
-int	handle_keyrelease(int key, t_data *data);
+int		handle_keyrelease(int key, t_data *data);
 void	find_sprite_pos(t_data *data, int i, int j);
 void	handle_end(t_data *data, int w, int h, int midx);
 void	handle_movement(int key, t_data *data);
-int	quit(t_data *data);
-int	check_allowed_move(int key, t_data *data);
-int	handle_keypress(int key, t_data *data);
+int		quit(t_data *data);
+int		check_allowed_move(int key, t_data *data);
+int		handle_keypress(int key, t_data *data);
 void	init_data(t_data *data, int x, int y);
-int	read_map_init(t_data *data, char *s, int y, int x);
-int	check_map_borders(t_data *data, int i, int j);
-int	check_map_path(t_data *data, char **test, int i, int j);
-int	check_map_char(char c);
+int		read_map_init(t_data *data, char *s, int y, int x);
+int		check_map_borders(t_data *data, int i, int j);
+int		check_map_path(t_data *data, char **test, int i, int j);
+int		check_map_char(char c);
 char	check_map(t_data *data, int i, int j);
 char	check_map_additional(t_data *data);
-int	check_map_error(t_data *data);
-int	check_map_filename(char *s);
+int		check_map_error(t_data *data);
+int		check_map_filename(char *s);
 void	so_long(char *s);
 void	set_player_direction(int key, t_data *data);
 void	copy_map(t_data *data);
-int	check_path(t_data *data, int i, int j);
-int	find_map_height(char *s);
+int		check_path(t_data *data, int i, int j);
+int		find_map_height(char *s);
 void	start_window_n_hooks(t_data *data);
 void	free_map(t_data *data, int st);
 

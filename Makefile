@@ -6,7 +6,7 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/02/20 13:43:35 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/02/21 00:22:27 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	so_long
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 CC 		=	gcc
-FLAGS	=	-Wall -Werror -Wextra
+FLAGS	=	-Wall -Werror -Wextra -g3
 LIBFT	=	$(SRC_DIR)libft/libft.a
 GNL		=	$(SRC_DIR)gnl/libgnl.a
 MLX		=	$(SRC_DIR)mlx/libmlx.a

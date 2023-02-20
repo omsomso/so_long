@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:45:57 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/03 01:32:36 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:27:21 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	copy_map(t_data *data)
 
 	y = 0;
 	data->path = malloc(sizeof(char *) * data->y + 1);
+	if (data->path == NULL)
+		return ;
 	while (y <= data->y)
 	{
 		data->path[y] = ft_strdup(data->map[y]);

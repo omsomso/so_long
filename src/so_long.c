@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:45:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/06 12:33:48 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:01:15 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	free_everything(t_data *data)
 	mlx_destroy_image(data->mlx, data->bckg);
 	mlx_destroy_image(data->mlx, data->wall);
 	mlx_destroy_image(data->mlx, data->item);
+	mlx_destroy_image(data->mlx, data->counter_bckg);
 	free(data);
 }
 
