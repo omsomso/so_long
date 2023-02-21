@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/20                              ###   ########.fr       */
+/*   Updated: 2023/02/21                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	init_img(t_data *data)
 {
 	int	x;
 	int	y;
-
+	
 	data->bckg = mlx_xpm_file_to_image(data->mlx, "sprites/dirt.xpm", &x, &y);
 	data->wall = mlx_xpm_file_to_image(data->mlx, "sprites/wall.xpm", &x, &y);
 	data->item = mlx_xpm_file_to_image(data->mlx, "sprites/item.xpm", &x, &y);
+	data->counter_bckg = mlx_xpm_file_to_image(data->mlx, \
+	"sprites/counter_bckg.xpm", &x, &y);
 	draw_sprites(data);
 }
 

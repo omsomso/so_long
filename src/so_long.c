@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/06                              ###   ########.fr       */
+/*   Updated: 2023/02/21                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	free_everything(t_data *data)
 	mlx_destroy_image(data->mlx, data->bckg);
 	mlx_destroy_image(data->mlx, data->wall);
 	mlx_destroy_image(data->mlx, data->item);
+	mlx_destroy_image(data->mlx, data->counter_bckg);
 	free(data);
 }
 

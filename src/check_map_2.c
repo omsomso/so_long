@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03                               #+#    #+#             */
-/*   Updated: 2023/02/03                              ###   ########.fr       */
+/*   Updated: 2023/02/21                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	copy_map(t_data *data)
 
 	y = 0;
 	data->path = malloc(sizeof(char *) * data->y + 1);
+	if (data->path == NULL)
+		return ;
 	while (y <= data->y)
 	{
 		data->path[y] = ft_strdup(data->map[y]);
