@@ -6,7 +6,7 @@
 #                                                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20                               #+#    #+#              #
-#    Updated: 2023/02/21                              ###   ########.fr        #
+#    Updated: 2023/02/24                              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	so_long
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 CC 		=	gcc
-FLAGS	=	-Wall -Werror -Wextra -g3
+FLAGS	=	-Wall -Werror -Wextra
 LIBFT	=	$(SRC_DIR)libft/libft.a
 GNL		=	$(SRC_DIR)gnl/libgnl.a
 MLX		=	$(SRC_DIR)mlx/libmlx.a
