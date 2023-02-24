@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 04:18:42 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/21 00:16:04 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:49:30 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	init_img(t_data *data)
 {
 	int	x;
 	int	y;
-	
+
 	data->bckg = mlx_xpm_file_to_image(data->mlx, "sprites/dirt.xpm", &x, &y);
 	data->wall = mlx_xpm_file_to_image(data->mlx, "sprites/wall.xpm", &x, &y);
 	data->item = mlx_xpm_file_to_image(data->mlx, "sprites/item.xpm", &x, &y);
