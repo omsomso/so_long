@@ -6,20 +6,26 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:45:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/21 00:01:15 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 07:43:08 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include <stdio.h>
 
 void	free_map(t_data *data, int st)
 {
 	int	i;
 
-	i = -1;
-	while (i++ < data->y)
-		free(data->map[i]);
-	free(data->map);
+	i = 0;
+	while (i <= data->y)
+	{
+		if (data->map[i] != NULL)
+			free(data->map[i]);
+		i++;
+	}
+	if (data->map != NULL)
+		free(data->map);
 	if (st == 1)
 		free(data);
 }
@@ -28,10 +34,13 @@ void	free_everything(t_data *data)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	free_map(data, 0);
-	while (i++ < data->y)
+	while (i <= data->y)
+	{
 		free(data->path[i]);
+		i++;
+	}
 	free(data->path);
 	free(data->p_name);
 	free(data->f_name);
@@ -65,6 +74,7 @@ void	so_long(char *s)
 {
 	t_data	*data;
 
+	data = NULL;
 	data = malloc(sizeof(t_data));
 	if (data == NULL)
 		return ;

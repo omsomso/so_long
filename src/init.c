@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 04:18:42 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:49:30 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 07:42:54 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,9 @@ void	init_data(t_data *data, int x, int y)
 
 int	find_map_height(char *s)
 {
-	int	fd;
-	int	i;
+	int		fd;
+	int		i;
+	char	*line;
 
 	i = 0;
 	fd = open(s, O_RDONLY);
@@ -84,8 +85,10 @@ int	find_map_height(char *s)
 		return (0);
 	while (1)
 	{
-		if (get_next_line(fd) == NULL)
+		line = get_next_line(fd);
+		if (line == NULL)
 			break ;
+		free(line);
 		i++;
 	}
 	close(fd);
@@ -98,6 +101,7 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 	int	height;
 
 	height = find_map_height(s);
+	data->map = NULL;
 	if (height <= 2)
 		return (0);
 	fd = open(s, O_RDONLY);
@@ -106,6 +110,7 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 		return (0);
 	while (1)
 	{
+		data->map[y] = NULL;
 		data->map[y] = get_next_line(fd);
 		if (data->map[y] == NULL)
 			break ;
