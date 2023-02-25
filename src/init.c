@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 04:18:42 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/25 17:52:13 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:14:24 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,10 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 	int	height;
 
 	height = find_map_height(s);
-//	printf("height = %d\n", height);
 	data->map = NULL;
 	fd = open(s, O_RDONLY);
 	data->map = malloc(sizeof(char *) * height + 1);
+	data->map[0] = NULL;
 	if (height <= 2)
 		return (0);
 	if (data->map == NULL)

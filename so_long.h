@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:53:07 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/25 17:45:20 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:58:44 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_data
 	int		anim_frame;
 	char	**map;
 	char	**path;
+	char	**pathit;
 	char	*p_name;
 	char	*f_name;
 }	t_data;
@@ -85,7 +86,6 @@ int		handle_keypress(int key, t_data *data);
 void	init_data(t_data *data, int x, int y);
 int		read_map_init(t_data *data, char *s, int y, int x);
 int		check_map_borders(t_data *data, int i, int j);
-int		check_map_path(t_data *data, char **test, int i, int j);
 int		check_map_char(char c);
 char	check_map(t_data *data, int i, int j);
 char	check_map_additional(t_data *data);
@@ -95,8 +95,9 @@ void	so_long(char *s);
 void	set_player_direction(int key, t_data *data);
 void	copy_map(t_data *data);
 int		check_path(t_data *data, int i, int j);
+int		check_item_path(t_data *data, int i, int j);
 int		find_map_height(char *s);
 void	start_window_n_hooks(t_data *data);
-void	free_map(t_data *data, int st);
+void	free_map(char **map, int y);
 
 #endif

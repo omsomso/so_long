@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:44:50 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/25 17:48:16 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:48:22 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	check_map_additional(t_data *data)
 	if (data->py == 0 || data->items == 0 || data->ey == 0)
 		return ('N');
 	if (check_path(data, data->py, data->px) == 0)
+		return ('V');
+	if (check_item_path(data, data->py, data->px) != data->items)
 		return ('V');
 	return (1);
 }

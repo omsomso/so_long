@@ -6,49 +6,46 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:45:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/25 17:52:56 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:04:15 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 #include <stdio.h>
 
-void	free_map(t_data *data, int st)
+void	free_map(char **map, int y)
 {
 	int	i;
 
 	i = 0;
-	while (i <= data->y)
+	while (i <= y)
 	{
-		if (data->map[i] != NULL)
-			free(data->map[i]);
+		if (map[i] != NULL)
+			free(map[i]);
 		i++;
 	}
-	if (data->map != NULL)
-		free(data->map);
-	if (st == 1)
-		free(data);
+	if (map != NULL)
+		free(map);
 }
 
 void	free_everything(t_data *data)
 {
-	int	i;
-
-	i = 0;
-	free_map(data, 0);
-	while (i <= data->y)
-	{
-		free(data->path[i]);
-		i++;
-	}
-	free(data->path);
-	free(data->p_name);
-	free(data->f_name);
+	if (data->map != NULL)
+		free_map(data->map, data->y);
+	if (data->path != NULL)
+		free_map(data->path, data->y);
+	if (data->pathit != NULL)
+		free_map(data->pathit, data->y);
+	if (data->p_name != NULL)
+		free(data->p_name);
+	if (data->f_name != NULL)
+		free(data->f_name);
 	mlx_destroy_image(data->mlx, data->bckg);
 	mlx_destroy_image(data->mlx, data->wall);
 	mlx_destroy_image(data->mlx, data->item);
 	mlx_destroy_image(data->mlx, data->counter_bckg);
-	free(data);
+	if (data != NULL)
+		free(data);
 }
 
 int	quit(t_data *data)
@@ -78,17 +75,20 @@ void	so_long(char *s)
 	data = malloc(sizeof(t_data));
 	if (data == NULL)
 		return ;
+	data->map = NULL;
+	data->p_name = NULL;
+	data->f_name = NULL;
 	if (read_map_init(data, s, 0, 0) == 0 || check_map_filename(s) == 0)
 	{
 		ft_putendl_fd("Error", 2);
 		ft_putendl_fd("Invalid file. Check its name and extension.", 2);
-		free_map(data, 1);
+		free_everything(data);
 		return ;
 	}
 	find_sprite_pos(data, 0, 0);
 	if (check_map_error(data) == 0)
 	{
-		free_map(data, 1);
+		free_everything(data);
 		return ;
 	}
 	start_window_n_hooks(data);

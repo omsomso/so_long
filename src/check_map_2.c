@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 00:45:57 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/21 00:27:21 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:48:30 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,27 @@ int	check_path(t_data *data, int i, int j)
 		ret = check_path(data, i + 1, j);
 	if (data->path[i - 1][j] != '1' && data->path[i - 1][j] != 'X')
 		ret = check_path(data, i - 1, j);
+	return (ret);
+}
+
+int	check_item_path(t_data *data, int i, int j)
+{
+	static int	ret = 0;
+
+	if (data->pathit[i][j] == 'C')
+	{
+		data->pathit[i][j] = 'X';
+		ret++;
+	}
+	data->pathit[i][j] = 'X';
+	if (data->pathit[i][j + 1] != '1' && data->pathit[i][j + 1] != 'X')
+		check_item_path(data, i, j + 1);
+	if (data->pathit[i][j - 1] != '1' && data->pathit[i][j - 1] != 'X')
+		check_item_path(data, i, j - 1);
+	if (data->pathit[i + 1][j] != '1' && data->pathit[i + 1][j] != 'X')
+		check_item_path(data, i + 1, j);
+	if (data->pathit[i - 1][j] != '1' && data->pathit[i - 1][j] != 'X')
+		check_item_path(data, i - 1, j);
 	return (ret);
 }
 
@@ -62,6 +83,15 @@ void	copy_map(t_data *data)
 	while (y <= data->y)
 	{
 		data->path[y] = ft_strdup(data->map[y]);
+		y++;
+	}
+	data->pathit = malloc(sizeof(char *) * data->y + 1);
+	if (data->pathit == NULL)
+		return ;
+	y = 0;
+	while (y <= data->y)
+	{
+		data->pathit[y] = ft_strdup(data->map[y]);
 		y++;
 	}
 	return ;
