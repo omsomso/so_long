@@ -26,6 +26,8 @@ char	check_map_additional(t_data *data)
 		return ('N');
 	if (check_path(data, data->py, data->px) == 0)
 		return ('V');
+	if (check_item_path(data, data->py, data->px) != data->items)
+		return ('V');
 	return (1);
 }
 

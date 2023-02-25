@@ -101,10 +101,10 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 	int	height;
 
 	height = find_map_height(s);
-//	printf("height = %d\n", height);
 	data->map = NULL;
 	fd = open(s, O_RDONLY);
 	data->map = malloc(sizeof(char *) * height + 1);
+	data->map[0] = NULL;
 	if (height <= 2)
 		return (0);
 	if (data->map == NULL)
