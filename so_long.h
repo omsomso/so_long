@@ -6,13 +6,14 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:53:07 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 07:16:09 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:45:20 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include "src/mlx/mlx.h"
