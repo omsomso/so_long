@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/24                              ###   ########.fr       */
+/*   Updated: 2023/02/25                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,12 @@ int	read_map_init(t_data *data, char *s, int y, int x)
 	int	height;
 
 	height = find_map_height(s);
+//	printf("height = %d\n", height);
 	data->map = NULL;
-	if (height <= 2)
-		return (0);
 	fd = open(s, O_RDONLY);
 	data->map = malloc(sizeof(char *) * height + 1);
+	if (height <= 2)
+		return (0);
 	if (data->map == NULL)
 		return (0);
 	while (1)

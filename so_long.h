@@ -6,13 +6,14 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/24                              ###   ########.fr       */
+/*   Updated: 2023/02/25                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include "src/mlx/mlx.h"
