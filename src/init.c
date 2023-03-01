@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 04:18:42 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/03/01 18:05:18 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:03:40 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	init_data(t_data *data, int x, int y)
 	data->foe = 0;
 	data->p_name = ft_strdup("sprites/player_l_1.xpm");
 	data->f_name = ft_strdup("sprites/foe_l_1.xpm");
-	copy_map(data);
 }
 
 int	find_map_height(char *s)

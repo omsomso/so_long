@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    oldMakefile                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/02/24 07:49:46 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/01 22:10:16 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ RED=\033[0;31m
 BLUE=\033[0;34m
 END=\033[0m
 
-all: $(NAME) link
+all: $(NAME)
 
 $(NAME): $(SRC)
 	@$(MAKE) -C $(SRC_DIR)libft
@@ -47,10 +47,10 @@ $(NAME): $(SRC)
 	@$(CC) $(FLAGS) -c $(SRC)
 	@mv *.o $(SRC_DIR)
 	@printf "[$(NAME)]$(GREEN) \t $? updated $(END)\n"
-	
-link : $(NAME) $(OBJ)
 	@$(CC) $(OBJ) $(LIBFT) $(GNL) $(MLX) $(MLX_F)  -o $(NAME)
 	@printf "[$(NAME)]$(GREEN) \t $(NAME) created $(END)\n"
+	
+#link : $(NAME) $(OBJ)
 
 clean:
 	@$(RM) $(OBJ)
