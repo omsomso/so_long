@@ -24,9 +24,11 @@ char	check_map_additional(t_data *data)
 {
 	if (data->py == 0 || data->items == 0 || data->ey == 0)
 		return ('N');
+	copy_map(data);
 	if (check_path(data, data->py, data->px) == 0)
 	{
 		free_map(data->path, data->y);
+		free_map(data->pathit, data->y);
 		return ('V');
 	}
 	if (check_item_path(data, data->py, data->px) != data->items)

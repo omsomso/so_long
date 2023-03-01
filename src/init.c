@@ -69,7 +69,6 @@ void	init_data(t_data *data, int x, int y)
 	data->foe = 0;
 	data->p_name = ft_strdup("sprites/player_l_1.xpm");
 	data->f_name = ft_strdup("sprites/foe_l_1.xpm");
-	copy_map(data);
 }
 
 int	find_map_height(char *s)
