@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:45:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/03/01 17:51:11 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:07:45 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void	free_everything(t_data *data)
 {
 	if (data->map != NULL)
 		free_map(data->map, data->y);
-	if (data->path != NULL)
-		free_map(data->path, data->y);
-	if (data->pathit != NULL)
-		free_map(data->pathit, data->y);
 	if (data->p_name != NULL)
 		free(data->p_name);
 	if (data->f_name != NULL)
 		free(data->f_name);
 	if (data->end != 0)
 	{
+		if (data->path != NULL)
+			free_map(data->path, data->y);
+		if (data->pathit != NULL)
+			free_map(data->pathit, data->y);
 		mlx_destroy_image(data->mlx, data->bckg);
 		mlx_destroy_image(data->mlx, data->wall);
 		mlx_destroy_image(data->mlx, data->item);
@@ -53,6 +53,7 @@ void	free_everything(t_data *data)
 
 int	quit(t_data *data)
 {
+	data->end = 2;
 	mlx_destroy_window(data->mlx, data->win);
 	free_everything(data);
 	exit (0);
@@ -77,6 +78,7 @@ void	so_long(char *s)
 	data = NULL;
 	data = malloc(sizeof(t_data));
 	data->map = NULL;
+	data->end = 0;
 	if (data == NULL)
 		return ;
 	data->p_name = NULL;
