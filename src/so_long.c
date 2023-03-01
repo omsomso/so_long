@@ -75,7 +75,6 @@ void	so_long(char *s)
 	data = malloc(sizeof(t_data));
 	if (data == NULL)
 		return ;
-	//data->map = NULL;
 	data->p_name = NULL;
 	data->f_name = NULL;
 	if (read_map_init(data, s, 0, 0) == 0 || check_map_filename(s) == 0)
