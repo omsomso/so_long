@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    oldMakefile                                        :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/03/01 22:10:16 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/02 00:37:24 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,8 @@ OBJ_DIR	=	obj/
 CC 		=	gcc
 FLAGS	=	-Wall -Werror -Wextra
 LIBFT	=	$(SRC_DIR)libft/libft.a
-GNL		=	$(SRC_DIR)gnl/libgnl.a
-MLX		=	$(SRC_DIR)mlx/libmlx.a
-MLX_F	=	-framework OpenGL -framework AppKit
+MLX		=	$(SRC_DIR)mlx/libmlx.a -framework OpenGL -framework AppKit
 AR 		=	ar -rcs
-LINK 	=	$(CC) $(FLAGS)
 RM		=	rm -f
 SRC 	= 	$(SRC_DIR)main.c \
 			$(SRC_DIR)so_long.c \
@@ -42,20 +39,16 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	@$(MAKE) -C $(SRC_DIR)libft
-	@$(MAKE) -C $(SRC_DIR)gnl
 	@$(MAKE) -C $(SRC_DIR)mlx
 	@$(CC) $(FLAGS) -c $(SRC)
 	@mv *.o $(SRC_DIR)
 	@printf "[$(NAME)]$(GREEN) \t $? updated $(END)\n"
-	@$(CC) $(OBJ) $(LIBFT) $(GNL) $(MLX) $(MLX_F)  -o $(NAME)
+	@$(CC) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
 	@printf "[$(NAME)]$(GREEN) \t $(NAME) created $(END)\n"
-	
-#link : $(NAME) $(OBJ)
 
 clean:
 	@$(RM) $(OBJ)
-	@cd $(SRC_DIR)libft && $(MAKE) clean 
-	@cd $(SRC_DIR)gnl && $(MAKE) clean 
+	@cd $(SRC_DIR)libft && $(MAKE) clean
 	@cd $(SRC_DIR)mlx && $(MAKE) clean
 	@$(RM) $(SRC_DIR)libft/libft.a
 	@printf "[$(NAME)]$(GREEN) \t .o removed $(END)\n"
@@ -63,7 +56,6 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@cd $(SRC_DIR)libft && $(MAKE) fclean
-	@cd $(SRC_DIR)gnl && $(MAKE) fclean
 	@printf "[$(NAME)]$(GREEN) \t $(NAME) removed $(END)\n"
 
 re: fclean all

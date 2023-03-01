@@ -6,14 +6,14 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 06:13:39 by kpawlows          #+#    #+#              #
-#    Updated: 2023/02/20 13:41:35 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/02 00:21:06 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 SRC_DIR	=	src/
 CC 		=	gcc
-FLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
 AR 		=	ar -rcs
 RM		=	rm -rf
 SRC 	= 	$(SRC_DIR)ft_atoi.c \
@@ -50,7 +50,12 @@ SRC 	= 	$(SRC_DIR)ft_atoi.c \
 			$(SRC_DIR)ft_strtrim.c \
 			$(SRC_DIR)ft_substr.c \
 			$(SRC_DIR)ft_tolower.c \
-			$(SRC_DIR)ft_toupper.c
+			$(SRC_DIR)ft_toupper.c \
+			$(SRC_DIR)get_next_line.c \
+			$(SRC_DIR)get_next_line_utils.c \
+			$(SRC_DIR)ft_printf.c \
+			$(SRC_DIR)ft_printf_utils.c
+
 OBJ		=	$(SRC:.c=.o)
 
 GREEN=\033[0;32m
@@ -61,7 +66,7 @@ END=\033[0m
 all: $(NAME)
 
 $(NAME): $(SRC)
-	@$(CC) $(FLAGS) -c $(SRC)
+	@$(CC) $(CFLAGS) -c $(SRC)
 	@mv *.o $(SRC_DIR)
 	@$(AR) $(NAME) $(OBJ)
 	@printf "[libft]$(GREEN) \t $(NAME) created $(END)\n"

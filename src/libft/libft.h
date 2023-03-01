@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 02:13:23 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/20 13:36:56 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 00:32:39 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# define GNL_BUFFER_SIZE 64
 
 int		ft_atoi(const char *s);
 int		ft_isalnum(int c);
@@ -54,5 +57,21 @@ void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlen(const char *s);
+
+char	*get_next_line(int fd);
+void	gnl_read_buffer(char **rest, int fd);
+char	*gnl_get_line(char **rest);
+int		gnl_strlen(const char *s);
+char	*gnl_substr(char const *s, unsigned int start, size_t len);
+char	*gnl_strjoin(char const *s1, char const *s2);
+int		gnl_find_char(const char *s, int c, int n);
+
+void	ft_putnbr_uns_fd(unsigned int n, int fd);
+int		ft_nblen(long nb);
+int		ft_puthex(unsigned long nb, unsigned long nbcpy, char *hex);
+int		ft_putaddr(void *what);
+int		ft_add_chars(char c, long arg);
+int		ft_put_value(char c, long arg);
+int		ft_printf(const char *argv, ...);
 
 #endif
