@@ -40,10 +40,13 @@ void	free_everything(t_data *data)
 		free(data->p_name);
 	if (data->f_name != NULL)
 		free(data->f_name);
-	mlx_destroy_image(data->mlx, data->bckg);
-	mlx_destroy_image(data->mlx, data->wall);
-	mlx_destroy_image(data->mlx, data->item);
-	mlx_destroy_image(data->mlx, data->counter_bckg);
+	if (data->end != 0)
+	{
+		mlx_destroy_image(data->mlx, data->bckg);
+		mlx_destroy_image(data->mlx, data->wall);
+		mlx_destroy_image(data->mlx, data->item);
+		mlx_destroy_image(data->mlx, data->counter_bckg);
+	}
 	if (data != NULL)
 		free(data);
 }
@@ -73,6 +76,7 @@ void	so_long(char *s)
 
 	data = NULL;
 	data = malloc(sizeof(t_data));
+	data->map = NULL;
 	if (data == NULL)
 		return ;
 	data->p_name = NULL;
