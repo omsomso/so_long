@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:45:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/03/01 17:09:59 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:12:15 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	so_long(char *s)
 	data = malloc(sizeof(t_data));
 	if (data == NULL)
 		return ;
-	//data->map = NULL;
 	data->p_name = NULL;
 	data->f_name = NULL;
 	if (read_map_init(data, s, 0, 0) == 0 || check_map_filename(s) == 0)
