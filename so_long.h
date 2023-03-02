@@ -6,19 +6,16 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02                               #+#    #+#             */
-/*   Updated: 2023/02/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdio.h>
-# include <stdlib.h>
 # include <fcntl.h>
 # include "src/mlx/mlx.h"
 # include "src/libft/libft.h"
-# include "src/gnl/get_next_line.h"
 
 typedef struct s_data
 {
