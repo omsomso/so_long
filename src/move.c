@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 00:40:25 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/21 00:15:33 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:48:35 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ void	draw_counter(t_data *data)
 	items_collected = ft_itoa(data->items_collected);
 	items_all = ft_itoa(data->items);
 	display = ft_strjoin("Moves : ", moves);
-	display = ft_strjoin_free(display, " ");
+	display = ft_strjoin_ff(display, " ");
 	items = ft_strjoin("Items : ", items_collected);
-	items = ft_strjoin_free(items, "/");
-	items = ft_strjoin_free(items, items_all);
-	display = ft_strjoin_free(display, items);
+	items = ft_strjoin_ff(items, "/");
+	items = ft_strjoin_ff(items, items_all);
+	display = ft_strjoin_ff(display, items);
 	mlx_put_image_to_window(data->mlx, data->win, data->counter_bckg, 0, 0);
 	mlx_string_put(data->mlx, data->win, 2, 13, 0x000000, display);
 	free(moves);

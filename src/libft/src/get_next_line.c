@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 19:15:32 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/03/02 00:27:10 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:42:01 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ char	*gnl_get_line(char **rest)
 	char	*out;
 	char	*tmp;
 
-	len = gnl_strlen(*rest);
+	len = ft_strlen(*rest);
 	out = NULL;
 	if (gnl_find_char(*rest, '\n', len) == 0 && rest[0][0] != '\n')
 	{
 		if (*rest[0] != '\0')
-			out = gnl_substr(*rest, 0, gnl_find_char(*rest, '\0', len));
+			out = ft_substr(*rest, 0, gnl_find_char(*rest, '\0', len));
 		free(*rest);
 		*rest = NULL;
 		return (out);
 	}
-	out = gnl_substr(*rest, 0, gnl_find_char(*rest, '\n', len) + 1);
-	tmp = gnl_substr(*rest, gnl_find_char(*rest, '\n', len) + 1, len);
+	out = ft_substr(*rest, 0, gnl_find_char(*rest, '\n', len) + 1);
+	tmp = ft_substr(*rest, gnl_find_char(*rest, '\n', len) + 1, len);
 	free(*rest);
-	*rest = gnl_substr(tmp, 0, gnl_strlen(tmp));
+	*rest = ft_substr(tmp, 0, ft_strlen(tmp));
 	free(tmp);
 	return (out);
 }
@@ -51,12 +51,12 @@ void	gnl_read_buffer(char **rest, int fd)
 			buf[0] = '\0';
 		else
 			buf[pos] = '\0';
-		tmp = gnl_strjoin(rest[0], buf);
+		tmp = ft_strjoin(rest[0], buf);
 		free(buf);
 		free(rest[0]);
-		rest[0] = gnl_substr(tmp, 0, gnl_strlen(tmp));
+		rest[0] = ft_substr(tmp, 0, ft_strlen(tmp));
 		free(tmp);
-		if (gnl_find_char(rest[0], '\n', gnl_strlen(rest[0])))
+		if (gnl_find_char(rest[0], '\n', ft_strlen(rest[0])))
 			break ;
 	}
 }
