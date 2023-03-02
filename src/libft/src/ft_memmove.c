@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,3 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/*int	main(void)
-{
-	char str1[] = "abcdefgh";
-	char str2[20] = "abcdefgh";
-	//char str3[20] = "abcdefgh";
-
-	ft_memmove(&str1[1], &str1[2], 4);
-	memmove(&str2[1], &str2[2], 4);
-	printf("%s\n", str1);
-	printf("%s\n", str2);
-	return (0);
-}*/

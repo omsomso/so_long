@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*int	main(void)
-{
-	char str1[] = "imagination";
-	char str2[] = "imagination";
-
-	ft_bzero(str1, 4);
-	bzero(str2, 4);
-	printf("%s\n", str1);
-	printf("%s\n", str2);
-	return (0);
-}*/

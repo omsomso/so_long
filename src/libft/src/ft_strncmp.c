@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-
-/*int main(void)
-{
-	size_t	n;
-
-	char *tab1 = "";
-	char *tab2 = "AAAAAA";
-	//n = strlen("the cake is a lie !\0I'm hidden lol\r\n");
-	n = 6;
-	printf("%d \n", ft_strncmp(tab1, tab2, n));
-	printf("%d \n", strncmp(tab1, tab2, n));
-	return (0);
-}*/

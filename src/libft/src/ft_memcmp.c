@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return ((unsigned char)s1tmp[i] - (unsigned char)s2tmp[i]);
 	return (0);
 }
-
-/*int	main(void)
-{
-	char str1[] = "asdf";
-	char str2[] = "asdf";
-
-	printf("%d\n", ft_memcmp(str1, str2, 0));
-	printf("%d\n", memcmp(str1, str2, 0));
-	return (0);
-}*/

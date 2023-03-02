@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	str1[] = "okjjkofhgwo";
-	int		c = 1024;
-	int		d = 'o';
-	
-	printf("%s\n%s\n", ft_strrchr(str1, c), strrchr(str1, c));
-	printf("%s\n%s\n", ft_strrchr(str1, d), strrchr(str1, d));
-	c = '\0';
-	printf("%s\n%s\n", ft_strrchr(str1, c), strrchr(str1, c));
-	return (0);
-}*/

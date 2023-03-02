@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return ((void *) coc);
 }
-
-/*int	main(void)
-{
-	char	*pizza;
-	char	*pasta;
-
-	basta = ft_calloc(10, 1);
-	pasta = calloc(10, 1);
-	printf("%s\n%s\n", pizza, pasta);
-	return (0);
-}*/

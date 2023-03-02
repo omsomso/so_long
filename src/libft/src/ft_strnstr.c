@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	str1[] = "abcdefgh";
-	char	str2[] = "de";
-	int		n = 4;
-	
-	printf("%s\n", ft_strnstr(str1, str2, n));
-	printf("%s\n", strnstr(str1, str2, n));
-	return (0);
-}*/

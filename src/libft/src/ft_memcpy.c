@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	dst = dst2;
 	return (dst);
 }
-
-/*int	main(void)
-{
-	char str1[] = "aaa";
-	char str2[20];
-	char str3[20];
-
-	ft_memcpy(str2, str1, 2);
-	memcpy(str3, str1, 2);
-	printf("%s\n", str2);
-	printf("%s\n", str3);
-	return (0);
-}*/

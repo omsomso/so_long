@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	dst[i] = '\0';
 	return (src_len + dst_len);
 }
-
-/*int main(void)
-{
-	printf("\n");
-	char dest[100] = "1234";
-	char src[100] = "12345";
-	printf("%d \n", ft_strlcat(dest, src, 1));
-	printf("%s\n", dest);
-
-	printf("----------\n");
-
-	char dest2[100] = "1234";
-	char src2[100] = "12345";
-	printf("%lu \n", strlcat(dest2, src2, 1));
-	printf("%s\n", dest2);
-	printf("\n");
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*int	main()
-{
-	char *str;
-	int chcount;
-	str = "oui";
-	chcount = ft_strlen(str);
-	printf("string haz %d chars ", chcount);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
-/*int main(void)
-{
-	char    str1[] = "tripouille";
-	//int		start = 0; //len = 1;
-
-	printf("%s\n", ft_substr(str1, 0, 42000));
-	//printf("%s\n", ft_substr(str1, 3, 7));
-	//printf("%s\n", substr(str1, 2, 2));
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*                                                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26                               #+#    #+#             */
-/*   Updated: 2023/01/25                              ###   ########.fr       */
+/*   Updated: 2023/03/02                              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,3 @@ char	**ft_split(char const *s, char const c)
 	split[i] = NULL;
 	return (split);
 }
-
-/*int	main(int argc, char **argv)
-{
-	char	**split;
-
-	if (argc != 2)
-		return (0);
-	split = ft_split(argv[1], ' ');
-	int	i = 0, wc = ft_wordcount(argv[1], ' ');
-	while (i <= wc)
-	{
-		printf("split[%d] = %s\n", i, split[i]);
-		i++;
-	}
-	return (0);
-}*/
